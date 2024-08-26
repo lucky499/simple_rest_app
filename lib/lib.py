@@ -1,0 +1,2 @@
+def gethealth():
+    print("OK")
