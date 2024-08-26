@@ -1,0 +1,37 @@
+swagger: "2.0"
+info:
+  title: "Simple Flask API"
+  description: "A simple API to deemonstrate Flask with Swagger integration."
+  version: "1.0.0"
+host: "localhost:5000"
+basePath: "/"
+schemes:
+  - "http"
+paths:
+  /hello:
+    get:
+      summary: "Returns a greeting message"
+      description: "A simple endpoint that returns a greeting message."
+      responses:
+        200:
+          description: "A successful response"
+          schema:
+            type: "object"
+            properties:
+              message:
+                type: "string"
+                example: "Hello, World!"
+  
+  /health:
+    get:
+      summary: "Check the health of the application"
+      description: "Returns the health status of the application."
+      responses:
+        200:
+          description: "Health status"
+          schema:
+            type: "object"
+            properties:
+              status:
+                type: "string"
+                example: "Healthy"
