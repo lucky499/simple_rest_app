@@ -11,7 +11,7 @@ API_URL = 'openapi.yaml'
 swaggerui_blueprint = get_swaggerui_blueprint(
     SWAGGER_URL,
     API_URL,
-    config={'app_name': "Simple Flask API"}
+    config={'app_name': "simple_test_app"}
 )
 app.register_blueprint(swaggerui_blueprint, url_prefix=SWAGGER_URL)
 
