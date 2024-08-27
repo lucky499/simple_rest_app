@@ -1,0 +1,21 @@
+swagger: "2.0"
+info:
+  title: "Simple Flask API"
+  description: "A simple API to deemonstrate Flask with Swagger integration."
+  version: "1.0.0"
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+basePath: "/api"
+paths:  
+  /v1/health:
+    get:
+      summary: "Check the health of the application"
+      description: "Returns the health status of the application."
+      operationId: lib.health_check
+      responses:
+        200:
+          description: "Health status"
+      produces:
+        - text/plain
