@@ -9,10 +9,14 @@
     - name: printing the file list
       debug:
         var: file_list.stdout
-    - name: installing docker
+    - name: installing multipl packages
       yum:
-        name: docker
+        name: "{{ item }}""
         state: present
+      loop:
+        - git
+        - docker
+        - wget
     - name: Docker successuflly installed
       debug:
         msg: "docker is installed and is ready"
