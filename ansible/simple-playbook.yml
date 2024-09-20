@@ -1,0 +1,18 @@
+---
+- name: performs multiple tasks
+  hosts: my_server
+  become: yes
+  tasks:
+    - name: listing files from home
+      shell: ls -ltr /home/installer
+      register: file_list
+    - name: printing the file list
+      debug:
+        var: file_list.stdout
+    - name: installing docker
+      yum:
+        name: docker
+        state: present
+    - name: Docker successuflly installed
+      debug:
+        msg: "docker is installed and is ready"
