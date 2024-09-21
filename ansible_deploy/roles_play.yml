@@ -1,0 +1,5 @@
+---
+- hosts: my_server
+  become: yes
+  roles:
+    - installer_role

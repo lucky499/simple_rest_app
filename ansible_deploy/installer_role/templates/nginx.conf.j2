@@ -1,0 +1,22 @@
+user {{ nginx_user }};
+worker_processes {{ nginx_worker_processes }};
+
+error_log /var/log/nginx/error.log;
+pid /run/nginx.pid;
+
+events {
+    worker_connections 768;
+}
+
+http {
+    server {
+        listen {{ nginx_port }};
+        server_name localhost;
+
+        location / {
+            root   /usr/share/nginx/html;
+            index  index.html index.htm;
+        }
+    }
+}
+
