@@ -1,0 +1,11 @@
+---
+- name: Checking if the file already existed or not
+  stat:
+    path: /home/installer/file.txt
+  register: file_existsance
+- name: create file.tx in /home/installer if it's not there
+  file:
+    path: /home/installer/file.txt
+    state: file
+    mode: '0777'
+  when: file_existsance.stat.exists

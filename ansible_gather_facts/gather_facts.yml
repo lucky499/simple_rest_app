@@ -1,0 +1,17 @@
+---
+- name: This playbook is to gather target system's facts
+  hosts: my_server
+  become: yes
+  tasks:
+    - name: Target server IP
+      debug:
+        msg: "Gathering facts from the targer server"
+      # - name: Gathering facts
+      #      setup:
+    - name: Printing facts
+      debug:
+        msg: "Gathered facts are {{ ansible_facts }}"
+    - name: Printing only storage devices
+      debug:
+        msg: "Storage devices are: {{ ansible_facts['devices'] }}"
+

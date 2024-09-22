@@ -1,0 +1,2 @@
+[my_server]
+172.31.36.164 ansible_user=installer

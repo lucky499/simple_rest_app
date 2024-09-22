@@ -1,0 +1,13 @@
+---
+- name: This is the playbook which will include prime playbook
+  hosts: my_server
+  become: yes
+  tasks:
+    - name: Checking files available in /home/installer path
+      command: ls -ltr /home/installer
+      register: ls_command_output
+    - name: printing listed files
+      debug:
+        var: ls_command_output.stdout
+    - name: including tasks
+      include_tasks: create_file.yml
