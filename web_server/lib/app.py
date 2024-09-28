@@ -11,7 +11,7 @@ def create_app():
     app = connexion.App(__name__, specification_dir=".")
 
 # Read the openapi.yaml file to configure the endpoints
-    app.add_api('openapi.yaml')
+    app.add_api('openapi.yml')
     kwargs = {"port": 5555}
     print("starting the simple application")
     app.run(**kwargs)

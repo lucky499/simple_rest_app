@@ -19,3 +19,12 @@ paths:
           description: "Health status"
       produces:
         - text/plain
+  /v1/greet:
+    get:
+      description: "Returns Hello message"
+      operationId: lib.greet_call
+      responses:
+        200:
+          description: "hello message"
+      produces:
+        - text/plain

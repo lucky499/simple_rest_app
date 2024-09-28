@@ -1,5 +1,5 @@
 def greet():
-    print("helo, how are you?")
+    return "helo, how are you?"
 def new_greet():
     print("hello new greet")
 if __name__ == "__main__":
